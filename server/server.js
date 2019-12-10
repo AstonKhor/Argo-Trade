@@ -8,7 +8,6 @@ app.use('/', express.static(path.join(__dirname, '../public')));
 // app.use('/', express.static('http://localhost:3001/Public'));
 
 app.get('/graph/getStocks', (req, res) => {
-  console.log('here')
   let id = req.query.id;
   let key = Object.keys(req.query);
   res.redirect(`http://localhost:3001/graph/getStocks?${key[0]}=${id}`);
