@@ -8,29 +8,32 @@ app.use('/', express.static(path.join(__dirname, '../public')));
 // app.use('/', express.static('http://localhost:3001/Public'));
 
 app.get('/graph/getStocks', (req, res) => {
-  let id = req.query.id;
-  let key = Object.keys(req.query);
-  res.redirect(`http://localhost:3001/graph/getStocks?${key[0]}=${id}`);
+  console.log('request1')
+  res.redirect(`http://localhost:3001/graph/getStocks?${Object.keys(req.query)[0]}=${req.query.id}`);
 })
-app.get('/tradeStock/getStocks', (req, res) => {
-  let id = req.query.id;
-  let key = Object.keys(req.query);
-  res.redirect(`http://localhost:3002/tradeStock/getStocks?${key[0]}=${id}`);
+app.get('/graph/img/:photo', (req, res) => {
+  console.log(path.basename(req.url), 'graph photo');
+  res.redirect(`http://localhost:3001/graph/img/${path.basename(req.url)}`)
 })
-app.get('/about/getCompanies', (req, res) => {
-  let id = req.query.id;
-  let key = Object.keys(req.query);
-  res.redirect(`http://localhost:3001/about/getCompanies?${key[0]}=${id}`);
+app.get('/tradeStock/api/:id', (req, res) => {
+  console.log('request2')
+  res.redirect(`http://localhost:3002/tradeStock/api/${path.basename(req.url)}`);
 })
-app.get('/analyst/getStocks', (req, res) => {
-  let id = req.query.id;
-  let key = Object.keys(req.query);
-  res.redirect(`http://localhost:3001/analyst/getStocks?${key[0]}=${id}`);
+app.get('/about/getData/:id', (req, res) => {
+  console.log('request3')
+  res.redirect(`http://localhost:3003/about/getData/${req.params.id}`);
 })
-app.get('/earnings/getEarnings', (req, res) => {
-  let id = req.query.id;
-  let key = Object.keys(req.query);
-  res.redirect(`http://localhost:3001/earnings/getEarnings?${key[0]}=${id}`);
+app.get('/news/getData', (req, res) => {
+  console.log('request4')
+  res.redirect(`http://localhost:3004/news/getData?${Object.keys(req.query)[0]}=${req.query.id}`);
+})
+app.get('/ratings/getData/:id', (req, res) => {
+  console.log('proxy server ratings')
+  res.redirect(`http://localhost:3005/ratings/getData/${req.params.id}`);
+})
+app.get('/earnings/getData', (req, res) => {
+  console.log('request5')
+  res.redirect(`http://localhost:3006/earnings/getData?${Object.keys(req.query)[0]}=${req.query.id}`);
 })
 
 app.listen(port, () => { console.log(`server up and running. Now listing on port ${port}`)});
