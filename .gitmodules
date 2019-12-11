@@ -16,3 +16,6 @@
 [submodule "Robinhood-Earnings"]
 	path = Robinhood-Earnings
 	url = https://github.com/HRSF124-JANK/Robinhood-Earnings
+[submodule "Robinhood-NavBar"]
+	path = Robinhood-NavBar
+	url = https://github.com/HRSF124-JANK/Robinhood-NavBar

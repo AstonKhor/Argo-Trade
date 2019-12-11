@@ -32,11 +32,15 @@ app.get('/ratings/getData/:id', (req, res) => {
   res.redirect(`http://localhost:3005/ratings/getData/${req.params.id}`);
 })
 app.get('/ratings/img/:photo', (req, res) => {
-  res.redirect(`http://localhost:3001/img/${path.basename(req.url)}`)
+  res.redirect(`http://localhost:3001/ratings/img/${path.basename(req.url)}`)
 })
 
 app.get('/earnings/getData', (req, res) => {
   res.redirect(`http://localhost:3006/earnings/getData?${Object.keys(req.query)[0]}=${req.query.id}`);
+})
+
+app.get('/navbar/img/:photo', (req, res) => {
+  res.redirect(`http://localhost:3007/navbar/img/${path.basename(req.url)}`)
 })
 
 app.listen(port, () => { console.log(`server up and running. Now listing on port ${port}`) });
