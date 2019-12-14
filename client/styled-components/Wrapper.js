@@ -3,10 +3,8 @@ import styled from 'styled-components';
 let Wrapper = {};
 
 Wrapper.Global = styled.div`
-  font-family: "DINPro-Bold";
 `;
 Wrapper.Body = styled.div`
-  font-family: "DINPro-Bold";
   display: flex;
   flex-direction: row;
   width: 1024;
