@@ -3,6 +3,7 @@ import styled from 'styled-components';
 let Wrapper = {};
 
 Wrapper.Global = styled.div`
+  margin: auto;
 `;
 Wrapper.Body = styled.div`
   display: flex;
