@@ -6,6 +6,17 @@ class App extends React.Component {
     super(props);
   }
 
+  componentDidMount() {
+    const d = new Date();
+    const totalMinutes = (d.getHours() * 60) + d.getMinutes();
+    let background = '';
+    if (totalMinutes < 360 || totalMinutes >= 900) {
+      document.body.style.background = '#1b1b1d';
+    } else {
+      document.body.style.background = 'white';
+    }
+  }
+
   render() {
     return (
       <Wrapper.Global>
