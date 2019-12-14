@@ -1,10 +1,18 @@
 const express = require('express');
 const path = require('path');
 const port = 3000;
+const bodyParser = require('body-parser');
 
 const app = express();
 
+app.use(bodyParser.json());
 app.use('/', express.static(path.join(__dirname, '../public')));
+
+app.post('/updateLineColors', (req, res) => {
+  console.log(req.body);
+  // all the routes to update linecolors
+  res.end();
+})
 
 app.get('/graph/getStocks', (req, res) => {
   res.redirect(`http://localhost:3001/graph/getStocks?${Object.keys(req.query)[0]}=${req.query.id}`);
@@ -42,5 +50,7 @@ app.get('/earnings/getData', (req, res) => {
 app.get('/navbar/img/:photo', (req, res) => {
   res.redirect(`http://localhost:3007/navbar/img/${path.basename(req.url)}`)
 })
+
+
 
 app.listen(port, () => { console.log(`server up and running. Now listing on port ${port}`) });
