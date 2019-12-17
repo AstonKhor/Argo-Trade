@@ -14,12 +14,17 @@ Wrapper.Body = styled.div`
 Wrapper.FirstColumn = styled.div`
   display: flex;
   flex-direction: column;
+  margin-right: 30px;
 `;
 Wrapper.Navbar = styled.div`
   position: fixed;
+  z-index: 2147483647;
+  margin-top: -10px;
 `;
 Wrapper.Graph = styled.div`
   text-size: 36px;
+  margin-top: 20px;
+  z-index: 44;
 `;
 Wrapper.About = styled.div`
 

@@ -55,11 +55,8 @@ app.get('/news/getData', (req, res) => {
 app.get('/ratings/getData/', (req, res) => {
   res.redirect(`http://54.153.72.27/ratings/getData?${Object.keys(req.query)[0]}=${req.query.id}`);
 })
-app.get('/ratings/img/:photo', (req, res) => {
-  res.redirect(`http://54.153.72.27/ratings/img/${path.basename(req.url)}`)
-})
 app.get('/ratings/:photo', (req, res) => {
-  res.redirect(`http://54.153.72.27/ratings/${path.basename(req.url)}`)
+  res.redirect(`http://54.153.72.27${req.url}`)
 })
 
 app.get('/earnings/getData', (req, res) => {

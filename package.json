@@ -7,6 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack -w -g --mode=production",
     "start": "nodemon server/server.js",
+    "start:docker": "node server/server.js",
     "start:1": "nodemon Robinhood-Graph/server/server.js",
     "start:2": "nodemon Robinhood-About/server/server.js",
     "start:3": "nodemon Robinhood-AnalystRatings/server/server.js",
